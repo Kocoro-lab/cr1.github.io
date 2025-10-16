@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="你画我猜 - 一个简单有趣的在线画图猜词小游戏" />
+    <title>你画我猜 - Draw & Guess Game</title>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- 游戏标题 -->
+      <header class="game-header">
+        <h1>🎨 你画我猜</h1>
+        <p class="subtitle">根据提示词画出图案，看看AI能否猜中！</p>
+      </header>
+
+      <!-- 游戏主体 -->
+      <main class="game-container">
+        <!-- 游戏信息面板 -->
+        <div class="game-info">
+          <div class="current-word">
+            <span class="label">当前词汇：</span>
+            <span id="wordDisplay" class="word">点击开始游戏</span>
+          </div>
+          <div class="score-board">
+            <span class="label">得分：</span>
+            <span id="scoreDisplay" class="score">0</span>
+          </div>
+        </div>
+
+        <!-- 画板区域 -->
+        <div class="canvas-wrapper">
+          <canvas id="drawingCanvas"></canvas>
+        </div>
+
+        <!-- 工具栏 -->
+        <div class="toolbar">
+          <div class="color-picker">
+            <button class="color-btn active" data-color="#000000" style="background: #000000"></button>
+            <button class="color-btn" data-color="#ff0000" style="background: #ff0000"></button>
+            <button class="color-btn" data-color="#00ff00" style="background: #00ff00"></button>
+            <button class="color-btn" data-color="#0000ff" style="background: #0000ff"></button>
+            <button class="color-btn" data-color="#ffff00" style="background: #ffff00"></button>
+            <button class="color-btn" data-color="#ff00ff" style="background: #ff00ff"></button>
+          </div>
+          <div class="brush-size">
+            <label for="brushSize">笔刷大小：</label>
+            <input type="range" id="brushSize" min="1" max="20" value="3" />
+            <span id="brushSizeValue">3</span>
+          </div>
+          <div class="actions">
+            <button id="clearBtn" class="btn btn-secondary">清空画板</button>
+            <button id="submitBtn" class="btn btn-primary">提交答案</button>
+            <button id="skipBtn" class="btn btn-secondary">跳过</button>
+          </div>
+        </div>
+
+        <!-- 答案展示区 -->
+        <div id="resultArea" class="result-area hidden">
+          <div class="result-content">
+            <h3 id="resultTitle"></h3>
+            <p id="resultMessage"></p>
+            <button id="nextBtn" class="btn btn-primary">下一题</button>
+          </div>
+        </div>
+      </main>
+
+      <!-- 说明区域 -->
+      <footer class="game-footer">
+        <details class="instructions">
+          <summary>游戏说明</summary>
+          <ul>
+            <li>🎯 点击"下一题"开始游戏，系统会给出一个词汇</li>
+            <li>🖌️ 使用画板工具画出对应的图案</li>
+            <li>🎨 可以选择不同的颜色和笔刷大小</li>
+            <li>✅ 完成后点击"提交答案"进行评分</li>
+            <li>⏭️ 也可以选择"跳过"当前词汇</li>
+            <li>🔄 游戏完全在浏览器本地运行，无需后端服务</li>
+          </ul>
+        </details>
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

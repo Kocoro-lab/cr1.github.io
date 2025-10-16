@@ -4,7 +4,11 @@
       "Bash(git add:*)",
       "Bash(git commit -m \"$(cat <<''EOF''\nfeat: 实现你画我猜小游戏\n\n- 添加 Canvas 画板组件，支持鼠标和触摸绘制\n- 实现游戏管理器，包含词库和评分系统\n- 创建响应式 UI 界面，支持桌面和移动端\n- 配置 Vite 构建工具和代码规范（ESLint + Prettier）\n- 添加完整的中文项目文档（开发文档、使用说明、技术设计）\n- 配置 GitHub Actions 自动部署到 GitHub Pages\n\n技术栈：\n- HTML5 Canvas + Vanilla JavaScript\n- Vite 5.0\n- ESLint 9+ 扁平化配置\n- 纯前端实现，无后端依赖\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
       "Bash(git push:*)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: 实现你画我猜小游戏\n\n- 添加 Canvas 画板组件，支持鼠标和触摸绘制\n- 实现游戏管理器，包含词库和评分系统\n- 创建响应式 UI 界面，支持桌面和移动端\n- 配置 Vite 构建工具和代码规范（ESLint + Prettier）\n- 添加完整的中文项目文档（开发文档、使用说明、技术设计）\n\n技术栈：\n- HTML5 Canvas + Vanilla JavaScript\n- Vite 5.0\n- ESLint 9+ 扁平化配置\n- 纯前端实现，无后端依赖\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit:*)",
+      "Bash(gh auth:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "ask": []

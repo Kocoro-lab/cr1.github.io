@@ -19,9 +19,9 @@ export class DrawingCanvas {
    * 设置画布尺寸和样式
    */
   setupCanvas() {
-    // 设置画布尺寸
-    this.canvas.width = 600;
-    this.canvas.height = 400;
+    // 设置画布尺寸 - 增加到更大的尺寸以便更好的绘制体验
+    this.canvas.width = 800;
+    this.canvas.height = 600;
 
     // 设置绘制样式
     this.ctx.lineCap = 'round';

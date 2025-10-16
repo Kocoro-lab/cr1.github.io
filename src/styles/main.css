@@ -118,22 +118,24 @@ body {
   font-weight: 500;
 }
 
-/* ===== 画板区域 ===== */
+/* ===== 画板区域（黑板风格） ===== */
 .canvas-wrapper {
   margin: 20px 0;
   text-align: center;
-  background: #f0f0f0;
+  background: #1a1a1a;
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 #drawingCanvas {
-  border: 3px solid #ddd;
-  border-radius: 8px;
+  border: 8px solid #8b7355;
+  border-radius: 4px;
   cursor: crosshair;
-  background: white;
+  background: #2d3436;
   max-width: 100%;
   height: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* ===== 工具栏 ===== */

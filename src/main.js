@@ -47,6 +47,11 @@ class DrawAndGuessGame {
    * 绑定所有UI事件
    */
   bindEvents() {
+    // 开始游戏按钮
+    document.getElementById('startBtn').addEventListener('click', () => {
+      this.startGame();
+    });
+
     // 颜色选择
     document.querySelectorAll('.color-btn').forEach(btn => {
       btn.addEventListener('click', e => {
@@ -84,6 +89,23 @@ class DrawAndGuessGame {
     document.getElementById('nextBtn').addEventListener('click', () => {
       this.gameManager.nextWord();
     });
+  }
+
+  /**
+   * 开始游戏
+   */
+  startGame() {
+    // 隐藏开始按钮区域
+    document.getElementById('startGameSection').classList.add('hidden');
+
+    // 显示画板和工具栏（如果之前被隐藏）
+    document.querySelector('.canvas-wrapper').style.display = 'block';
+    document.querySelector('.toolbar').style.display = 'block';
+
+    // 开始第一题
+    this.gameManager.nextWord();
+
+    console.log('🎮 游戏开始！');
   }
 }
 

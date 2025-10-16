@@ -59,6 +59,11 @@ export class DrawingCanvas {
   startDrawing(e) {
     this.isDrawing = true;
     const pos = this.getPosition(e);
+
+    // 设置绘制样式
+    this.ctx.strokeStyle = this.currentColor;
+    this.ctx.lineWidth = this.brushSize;
+
     this.ctx.beginPath();
     this.ctx.moveTo(pos.x, pos.y);
   }
@@ -70,10 +75,12 @@ export class DrawingCanvas {
     if (!this.isDrawing) return;
 
     const pos = this.getPosition(e);
-    this.ctx.strokeStyle = this.currentColor;
-    this.ctx.lineWidth = this.brushSize;
     this.ctx.lineTo(pos.x, pos.y);
     this.ctx.stroke();
+
+    // 重新开始路径以避免重绘整条线
+    this.ctx.beginPath();
+    this.ctx.moveTo(pos.x, pos.y);
   }
 
   /**

@@ -9,7 +9,7 @@ export class DrawingCanvas {
     this.ctx = canvas.getContext('2d');
     this.isDrawing = false;
     this.currentColor = '#ffffff'; // 黑板默认使用白色粉笔
-    this.brushSize = 3;
+    this.brushSize = 5; // 增加默认画笔大小，更易绘画
 
     this.setupCanvas();
     this.bindEvents();
@@ -60,9 +60,10 @@ export class DrawingCanvas {
     this.isDrawing = true;
     const pos = this.getPosition(e);
 
-    // 设置绘制样式
+    // 设置绘制样式 - 增加粉笔效果
     this.ctx.strokeStyle = this.currentColor;
     this.ctx.lineWidth = this.brushSize;
+    this.ctx.globalAlpha = 0.8; // 粉笔半透明效果
 
     this.ctx.beginPath();
     this.ctx.moveTo(pos.x, pos.y);
@@ -124,7 +125,9 @@ export class DrawingCanvas {
    * 清空画板（黑板风格）
    */
   clear() {
-    this.ctx.fillStyle = '#2d3436';
+    // 使用更接近真实黑板的墨绿色
+    this.ctx.globalAlpha = 1.0;
+    this.ctx.fillStyle = '#1e3a2f';
     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
   }
 
@@ -142,8 +145,8 @@ export class DrawingCanvas {
     const imageData = this.getImageData();
     const data = imageData.data;
 
-    // 检查是否所有像素都是黑板背景色 (#2d3436)
-    const bgR = 45, bgG = 52, bgB = 54;
+    // 检查是否所有像素都是黑板背景色 (#1e3a2f)
+    const bgR = 30, bgG = 58, bgB = 47;
     for (let i = 0; i < data.length; i += 4) {
       // 允许轻微的颜色偏差
       if (Math.abs(data[i] - bgR) > 5 ||
